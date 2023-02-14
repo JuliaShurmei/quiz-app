@@ -163,22 +163,3 @@ startBtn.addEventListener('click', ()=>{
     startQuiz();
 });
 
-nextBtn.addEventListener('click', () => {
-    const selectedChoice = document.querySelector('.choice.selected');
-    if (!selectedChoice && nextBtn.textContent === "Next") {
-        // alert("Select your answer");
-        displayAlert("Select your answer");
-        return;
-    }
-    if (quizOver) {
-        nextBtn.textContent = "Next";
-        scoreCard.textContent = "";
-        currentQuestionIndex = 0;
-        quizOver = false;
-        score = 0;
-        startQuiz();
-    }
-    else {
-        checkAnswer();
-    }
-});
